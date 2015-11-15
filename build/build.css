@@ -1,0 +1,213 @@
+/** @define utilities */
+
+/* Applies to flex container
+   ========================================================================== */
+
+/**
+ * Direction: row
+ */
+
+.u-flexRow {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: row !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+.u-flexRowReverse {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+  -webkit-flex-direction: row-reverse !important;
+      -ms-flex-direction: row-reverse !important;
+          flex-direction: row-reverse !important;
+}
+
+/**
+ * Direction: column
+ */
+
+.u-flexCol {
+   -webkit-box-orient: vertical !important;
+   -webkit-box-direction: normal !important;
+   -webkit-flex-direction: column !important;
+       -ms-flex-direction: column !important;
+           flex-direction: column !important;
+}
+
+.u-flexColReverse {
+   -webkit-box-orient: vertical !important;
+   -webkit-box-direction: reverse !important;
+   -webkit-flex-direction: column-reverse !important;
+       -ms-flex-direction: column-reverse !important;
+           flex-direction: column-reverse !important;
+}
+
+/**
+ * Wrap
+ */
+
+.u-flexWrap {
+  -webkit-flex-wrap: wrap !important;
+      -ms-flex-wrap: wrap !important;
+          flex-wrap: wrap !important;
+}
+
+.u-flexNoWrap {
+  -webkit-flex-wrap: nowrap !important;
+      -ms-flex-wrap: nowrap !important;
+          flex-wrap: nowrap !important;
+}
+
+.u-flexWrapReverse {
+  -webkit-flex-wrap: wrap-reverse !important;
+      -ms-flex-wrap: wrap-reverse !important;
+          flex-wrap: wrap-reverse !important;
+}
+
+/**
+ * Align items along the main axis of the current line of the flex container
+ */
+
+.u-flexJustifyStart {
+  -webkit-box-pack: start !important;
+  -webkit-justify-content: flex-start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+
+.u-flexJustifyEnd {
+  -webkit-box-pack: end !important;
+  -webkit-justify-content: flex-end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+}
+
+.u-flexJustifyCenter {
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.u-flexJustifyBetween {
+  -webkit-box-pack: justify !important;
+  -webkit-justify-content: space-between !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+}
+
+.u-flexJustifyAround {
+  -webkit-justify-content: space-around !important;
+      -ms-flex-pack: distribute !important;
+          justify-content: space-around !important;
+}
+
+/**
+ * Align items in the cross axis of the current line of the
+ * flex container, similar to `justify-content` but in the perpendicular direction
+ */
+
+.u-flexAlignItemsStart {
+  -webkit-box-align: start !important;
+  -webkit-align-items: flex-start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
+}
+
+.u-flexAlignItemsEnd {
+  -webkit-box-align: end !important;
+  -webkit-align-items: flex-end !important;
+      -ms-flex-align: end !important;
+          align-items: flex-end !important;
+}
+
+.u-flexAlignItemsCenter {
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
+.u-flexAlignItemsStretch {
+  -webkit-box-align: stretch !important;
+  -webkit-align-items: stretch !important;
+      -ms-flex-align: stretch !important;
+          align-items: stretch !important;
+}
+
+.u-flexAlignItemsBaseline {
+  -webkit-box-align: baseline !important;
+  -webkit-align-items: baseline !important;
+      -ms-flex-align: baseline !important;
+          align-items: baseline !important;
+}
+
+/**
+ * Aligns a flex container's lines within when there is extra space in the
+ * cross-axis
+ *
+ * This property has no effect when there is only one line of flex items.
+ */
+
+.u-flexAlignContentStart {
+  -webkit-align-content: flex-start !important;
+      -ms-flex-line-pack: start !important;
+          align-content: flex-start !important;
+}
+
+.u-flexAlignContentEnd {
+  -webkit-align-content: flex-end !important;
+      -ms-flex-line-pack: end !important;
+          align-content: flex-end !important;
+}
+
+.u-flexAlignContentCenter {
+  -webkit-align-content: center !important;
+      -ms-flex-line-pack: center !important;
+          align-content: center !important;
+}
+
+.u-flexAlignContentStretch {
+  -webkit-align-content: stretch !important;
+      -ms-flex-line-pack: stretch !important;
+          align-content: stretch !important;
+}
+
+.u-flexAlignContentBetween {
+  -webkit-align-content: space-between !important;
+      -ms-flex-line-pack: justify !important;
+          align-content: space-between !important;
+}
+
+.u-flexAlignContentAround {
+  -webkit-align-content: space-around !important;
+      -ms-flex-line-pack: distribute !important;
+          align-content: space-around !important;
+}
+
+/**
+ * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
+ */
+/* postcss-bem-linter: ignore */
+.u-flexRow > *,
+.u-flexRowReverse > *,
+.u-flexNoWrap > *,
+.u-flexJustifyStart > *,
+.u-flexJustifyEnd > *,
+.u-flexJustifyCenter > *,
+.u-flexJustifyBetween > *,
+.u-flexJustifyAround > *,
+.u-flexAlignItemsStretch > *,
+.u-flexAlignItemsStart > *,
+.u-flexAlignItemsEnd > *,
+.u-flexAlignItemsCenter > *,
+.u-flexAlignContentBetween > *,
+.u-flexAlignItemsBaseline > * {
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1; /* 1 */
+}
+
+/* Applies to flex items
+   ========================================================================== */
