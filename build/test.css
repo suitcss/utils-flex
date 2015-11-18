@@ -813,14 +813,21 @@
    ========================================================================== */
 
 /**
- * Flex container
+ * Container
  */
 
 .u-flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.u-flexInline {
+  display: -webkit-inline-box !important;
+  display: -webkit-inline-flex !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
 }
 
 /**
@@ -1099,38 +1106,38 @@
  */
 
 .u-flexGrow1 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-      -ms-flex: 1 1 0%;
-          flex: 1 1 0%; /* 1 */
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 1 0% !important;
+      -ms-flex: 1 1 0% !important;
+          flex: 1 1 0% !important; /* 1 */
 }
 
 .u-flexGrow2 {
-  -webkit-box-flex: 2;
-  -webkit-flex: 2 1 0%;
-      -ms-flex: 2 1 0%;
-          flex: 2 1 0%;
+  -webkit-box-flex: 2 !important;
+  -webkit-flex: 2 1 0% !important;
+      -ms-flex: 2 1 0% !important;
+          flex: 2 1 0% !important;
 }
 
 .u-flexGrow3 {
-  -webkit-box-flex: 3;
-  -webkit-flex: 3 1 0%;
-      -ms-flex: 3 1 0%;
-          flex: 3 1 0%;
+  -webkit-box-flex: 3 !important;
+  -webkit-flex: 3 1 0% !important;
+      -ms-flex: 3 1 0% !important;
+          flex: 3 1 0% !important;
 }
 
 .u-flexGrow4 {
-  -webkit-box-flex: 4;
-  -webkit-flex: 4 1 0%;
-      -ms-flex: 4 1 0%;
-          flex: 4 1 0%;
+  -webkit-box-flex: 4 !important;
+  -webkit-flex: 4 1 0% !important;
+      -ms-flex: 4 1 0% !important;
+          flex: 4 1 0% !important;
 }
 
 .u-flexGrow5 {
-  -webkit-box-flex: 5;
-  -webkit-flex: 5 1 0%;
-      -ms-flex: 5 1 0%;
-          flex: 5 1 0%;
+  -webkit-box-flex: 5 !important;
+  -webkit-flex: 5 1 0% !important;
+      -ms-flex: 5 1 0% !important;
+          flex: 5 1 0% !important;
 }
 /**
  * @define utilities
@@ -1143,14 +1150,21 @@
      ========================================================================== */
 
   /**
-   * Flex container
+   * Container
    */
 
   .u-sm-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+
+  .u-sm-flexInline {
+    display: -webkit-inline-box !important;
+    display: -webkit-inline-flex !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
   }
 
   /**
@@ -1429,38 +1443,38 @@
    */
 
   .u-sm-flexGrow1 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 0%;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%; /* 1 */
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 0% !important;
+        -ms-flex: 1 1 0% !important;
+            flex: 1 1 0% !important; /* 1 */
   }
 
   .u-sm-flexGrow2 {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2 1 0%;
-        -ms-flex: 2 1 0%;
-            flex: 2 1 0%;
+    -webkit-box-flex: 2 !important;
+    -webkit-flex: 2 1 0% !important;
+        -ms-flex: 2 1 0% !important;
+            flex: 2 1 0% !important;
   }
 
   .u-sm-flexGrow3 {
-    -webkit-box-flex: 3;
-    -webkit-flex: 3 1 0%;
-        -ms-flex: 3 1 0%;
-            flex: 3 1 0%;
+    -webkit-box-flex: 3 !important;
+    -webkit-flex: 3 1 0% !important;
+        -ms-flex: 3 1 0% !important;
+            flex: 3 1 0% !important;
   }
 
   .u-sm-flexGrow4 {
-    -webkit-box-flex: 4;
-    -webkit-flex: 4 1 0%;
-        -ms-flex: 4 1 0%;
-            flex: 4 1 0%;
+    -webkit-box-flex: 4 !important;
+    -webkit-flex: 4 1 0% !important;
+        -ms-flex: 4 1 0% !important;
+            flex: 4 1 0% !important;
   }
 
   .u-sm-flexGrow5 {
-    -webkit-box-flex: 5;
-    -webkit-flex: 5 1 0%;
-        -ms-flex: 5 1 0%;
-            flex: 5 1 0%;
+    -webkit-box-flex: 5 !important;
+    -webkit-flex: 5 1 0% !important;
+        -ms-flex: 5 1 0% !important;
+            flex: 5 1 0% !important;
   }
 
 }
@@ -1475,14 +1489,21 @@
      ========================================================================== */
 
   /**
-   * Flex container
+   * Container
    */
 
   .u-md-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+
+  .u-md-flexInline {
+    display: -webkit-inline-box !important;
+    display: -webkit-inline-flex !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
   }
 
   /**
@@ -1761,38 +1782,38 @@
    */
 
   .u-md-flexGrow1 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 0%;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%; /* 1 */
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 0% !important;
+        -ms-flex: 1 1 0% !important;
+            flex: 1 1 0% !important; /* 1 */
   }
 
   .u-md-flexGrow2 {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2 1 0%;
-        -ms-flex: 2 1 0%;
-            flex: 2 1 0%;
+    -webkit-box-flex: 2 !important;
+    -webkit-flex: 2 1 0% !important;
+        -ms-flex: 2 1 0% !important;
+            flex: 2 1 0% !important;
   }
 
   .u-md-flexGrow3 {
-    -webkit-box-flex: 3;
-    -webkit-flex: 3 1 0%;
-        -ms-flex: 3 1 0%;
-            flex: 3 1 0%;
+    -webkit-box-flex: 3 !important;
+    -webkit-flex: 3 1 0% !important;
+        -ms-flex: 3 1 0% !important;
+            flex: 3 1 0% !important;
   }
 
   .u-md-flexGrow4 {
-    -webkit-box-flex: 4;
-    -webkit-flex: 4 1 0%;
-        -ms-flex: 4 1 0%;
-            flex: 4 1 0%;
+    -webkit-box-flex: 4 !important;
+    -webkit-flex: 4 1 0% !important;
+        -ms-flex: 4 1 0% !important;
+            flex: 4 1 0% !important;
   }
 
   .u-md-flexGrow5 {
-    -webkit-box-flex: 5;
-    -webkit-flex: 5 1 0%;
-        -ms-flex: 5 1 0%;
-            flex: 5 1 0%;
+    -webkit-box-flex: 5 !important;
+    -webkit-flex: 5 1 0% !important;
+        -ms-flex: 5 1 0% !important;
+            flex: 5 1 0% !important;
   }
 
 }
@@ -1807,14 +1828,21 @@
      ========================================================================== */
 
   /**
-   * Flex container
+   * Container
    */
 
   .u-lg-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+
+  .u-lg-flexInline {
+    display: -webkit-inline-box !important;
+    display: -webkit-inline-flex !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
   }
 
   /**
@@ -2093,38 +2121,38 @@
    */
 
   .u-lg-flexGrow1 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 0%;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%; /* 1 */
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 0% !important;
+        -ms-flex: 1 1 0% !important;
+            flex: 1 1 0% !important; /* 1 */
   }
 
   .u-lg-flexGrow2 {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2 1 0%;
-        -ms-flex: 2 1 0%;
-            flex: 2 1 0%;
+    -webkit-box-flex: 2 !important;
+    -webkit-flex: 2 1 0% !important;
+        -ms-flex: 2 1 0% !important;
+            flex: 2 1 0% !important;
   }
 
   .u-lg-flexGrow3 {
-    -webkit-box-flex: 3;
-    -webkit-flex: 3 1 0%;
-        -ms-flex: 3 1 0%;
-            flex: 3 1 0%;
+    -webkit-box-flex: 3 !important;
+    -webkit-flex: 3 1 0% !important;
+        -ms-flex: 3 1 0% !important;
+            flex: 3 1 0% !important;
   }
 
   .u-lg-flexGrow4 {
-    -webkit-box-flex: 4;
-    -webkit-flex: 4 1 0%;
-        -ms-flex: 4 1 0%;
-            flex: 4 1 0%;
+    -webkit-box-flex: 4 !important;
+    -webkit-flex: 4 1 0% !important;
+        -ms-flex: 4 1 0% !important;
+            flex: 4 1 0% !important;
   }
 
   .u-lg-flexGrow5 {
-    -webkit-box-flex: 5;
-    -webkit-flex: 5 1 0%;
-        -ms-flex: 5 1 0%;
-            flex: 5 1 0%;
+    -webkit-box-flex: 5 !important;
+    -webkit-flex: 5 1 0% !important;
+        -ms-flex: 5 1 0% !important;
+            flex: 5 1 0% !important;
   }
 
 }
