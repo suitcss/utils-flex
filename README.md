@@ -12,6 +12,10 @@ SUIT CSS flexbox utilities
 
 ## Available classes
 
+**`flex-container`**
+
+* `u-flex` - Set `display: flex`
+
 **`flex-direction`**
 
 * `u-flexRow` - Displays items in a row
@@ -56,12 +60,19 @@ SUIT CSS flexbox utilities
 * `u-flexAlignSelfEnd` - Aligns single item at cross axis end
 * `u-flexAlignSelfCenter` - Aligns single item at cross axis centre-
 * `u-flexAlignSelfStretch` - Stretches single item from cross start to end
+* `u-flexAlignSelfAuto` - Uses the default set by `align-items`
 
 **`order`**
 
 * `u-flexOrderFirst` - Positions an item at the start
 * `u-flexOrderLast` - Positions an item at the end
 * `u-flexOrderNone` - Sets item order to the default of `0`
+
+**`flex-grow`**
+
+* `u-flexGrowX` - Specify how much the flex item will grow relatively
+
+`X` can be any of the following numbers: `1`, `2`, `3`, `4`, `5`.
 
 ### Plugins
 
@@ -90,11 +101,6 @@ breakpoints can be configured using `@custom-media`. For example:
 
 ## Usage
 
-### Applying `display: flex;`
-
-The `flex` utilities are designed to be used where the `display: flex` property
-is already set, for example by [`Grid`](https://github.com/suitcss/components-grid) or [`utils-display`](https://github.com/suitcss/utils-display).
-
 ### Centring an element in its container
 
 ``` html
@@ -104,6 +110,8 @@ is already set, for example by [`Grid`](https://github.com/suitcss/components-gr
 ```
 
 ### Usage with [`Grid`](https://github.com/suitcss/components-grid)
+
+Note: The `Grid` component already sets `display: flex` on the root element.
 
 ``` html
 <div class="Grid Grid--alignBottom">
