@@ -8,7 +8,7 @@ SUIT CSS flexbox utilities
 ## Installation
 
 * [npm](http://npmjs.org/): `npm install suitcss-utils-flex`
-* Download: [zip](https://github.com/suitcss/utils-flex/releases/latest)
+* Download: [zip](https://github.com/simonsmith/utils-flex/releases/latest)
 
 ## Available classes
 
@@ -77,11 +77,17 @@ SUIT CSS flexbox utilities
 
 ### Plugins
 
-Utilities that can be limited to specific Media Query breakpoints.
+All flex utilities can be limited to specific Media Query breakpoints.
 
 * `u-sm-flexX` - To use at the smallest Media Query breakpoint.
 * `u-md-flexX` - To use at the medium Media Query breakpoint.
 * `u-lg-flexX` - To use at the largest Media Query breakpoint.
+
+``` html
+<div class="u-md-flex u-md-flexWrap">
+  <!-- flex items -->
+</div>
+```
 
 ### Configuration
 
