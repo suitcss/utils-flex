@@ -72,75 +72,139 @@
   text-transform: uppercase;
 }
 /**
- * Display-type utilities
- */
-
-.u-block {
-  display: block !important;
-}
-
-.u-hidden {
-  display: none !important;
-}
-
-.u-flex {
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-
-.u-inlineFlex {
-  display: -webkit-inline-box !important;
-  display: -webkit-inline-flex !important;
-  display: -ms-inline-flexbox !important;
-  display: inline-flex !important;
-}
-
-/**
- * Completely remove from the flow but leave available to screen readers.
- */
-
-.u-hiddenVisually {
-  position: absolute !important;
-  overflow: hidden !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
-.u-inline {
-  display: inline !important;
-}
-
-/**
- * 1. Fix for Firefox bug: an image styled `max-width:100%` within an
- * inline-block will display at its default size, and not limit its width to
- * 100% of an ancestral container.
- */
-
-.u-inlineBlock {
-  display: inline-block !important;
-  max-width: 100%; /* 1 */
-}
-
-.u-table {
-  display: table !important;
-}
-
-.u-tableCell {
-  display: table-cell !important;
-}
-
-.u-tableRow {
-  display: table-row !important;
-}
-/**
  * @define utilities
  * Sizing utilities
  */
+
+/* Proportional widths
+   ========================================================================== */
+
+/**
+ * Specify the proportional width of an object.
+ * Intentional redundancy build into each set of unit classes.
+ * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+ *
+ * 1. Use `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11
+ *    http://git.io/vllMD
+ */
+
+/* postcss-bem-linter: ignore */
+[class*="u-size"] {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important; /* 1 */
+}
+
+.u-size1of12 {
+  width: calc(100% * 1 / 12) !important;
+}
+
+.u-size1of10 {
+  width: 10% !important;
+}
+
+.u-size1of8 {
+  width: 12.5% !important;
+}
+
+.u-size1of6,
+.u-size2of12 {
+  width: calc(100% * 1 / 6) !important;
+}
+
+.u-size1of5,
+.u-size2of10 {
+  width: 20% !important;
+}
+
+.u-size1of4,
+.u-size2of8,
+.u-size3of12 {
+  width: 25% !important;
+}
+
+.u-size3of10 {
+  width: 30% !important;
+}
+
+.u-size1of3,
+.u-size2of6,
+.u-size4of12 {
+  width: calc(100% * 1 / 3) !important;
+}
+
+.u-size3of8 {
+  width: 37.5% !important;
+}
+
+.u-size2of5,
+.u-size4of10 {
+  width: 40% !important;
+}
+
+.u-size5of12 {
+  width: calc(100% * 5 / 12) !important;
+}
+
+.u-size1of2,
+.u-size2of4,
+.u-size3of6,
+.u-size4of8,
+.u-size5of10,
+.u-size6of12 {
+  width: 50% !important;
+}
+
+.u-size7of12 {
+  width: calc(100% * 7 / 12) !important;
+}
+
+.u-size3of5,
+.u-size6of10 {
+  width: 60% !important;
+}
+
+.u-size5of8 {
+  width: 62.5% !important;
+}
+
+.u-size2of3,
+.u-size4of6,
+.u-size8of12 {
+  width: calc(100% * 2 / 3) !important;
+}
+
+.u-size7of10 {
+  width: 70% !important;
+}
+
+.u-size3of4,
+.u-size6of8,
+.u-size9of12 {
+  width: 75% !important;
+}
+
+.u-size4of5,
+.u-size8of10 {
+  width: 80% !important;
+}
+
+.u-size5of6,
+.u-size10of12 {
+  width: calc(100% * 5 / 6) !important;
+}
+
+.u-size7of8 {
+  width: 87.5% !important;
+}
+
+.u-size9of10 {
+  width: 90% !important;
+}
+
+.u-size11of12 {
+  width: calc(100% * 11 / 12) !important;
+}
 
 /* Intrinsic widths
    ========================================================================== */
@@ -163,6 +227,23 @@
 }
 
 /**
+ * An alternative method to make an element fill the remaining space.
+ * Distributes space based on the initial width and height of the element
+ *
+ * http://www.w3.org/TR/css-flexbox/images/rel-vs-abs-flex.svg
+ */
+
+.u-sizeFillAlt {
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 1 auto !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important;
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
+}
+
+/**
  * Make an element the width of its parent.
  */
 
@@ -171,204 +252,142 @@
   display: block !important;
   width: 100% !important;
 }
-
-
-/* Proportional widths
-   ========================================================================== */
-
-/**
- * Specify the proportional width of an object.
- * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
- *
- * Uses `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11 - http://git.io/vllMD
- */
-
-.u-size1of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 1 / 12) !important;
-}
-
-.u-size1of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 10% !important;
-}
-
-.u-size1of8 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 12.5% !important;
-}
-
-.u-size1of6,
-.u-size2of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 1 / 6) !important;
-}
-
-.u-size1of5,
-.u-size2of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 20% !important;
-}
-
-.u-size1of4,
-.u-size2of8,
-.u-size3of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 25% !important;
-}
-
-.u-size3of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 30% !important;
-}
-
-.u-size1of3,
-.u-size2of6,
-.u-size4of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 1 / 3) !important;
-}
-
-.u-size3of8 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 37.5% !important;
-}
-
-.u-size2of5,
-.u-size4of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 40% !important;
-}
-
-.u-size5of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 5 / 12) !important;
-}
-
-.u-size1of2,
-.u-size2of4,
-.u-size3of6,
-.u-size4of8,
-.u-size5of10,
-.u-size6of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 50% !important;
-}
-
-.u-size7of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 7 / 12) !important;
-}
-
-.u-size3of5,
-.u-size6of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 60% !important;
-}
-
-.u-size5of8 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 62.5% !important;
-}
-
-.u-size2of3,
-.u-size4of6,
-.u-size8of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 2 / 3) !important;
-}
-
-.u-size7of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 70% !important;
-}
-
-.u-size3of4,
-.u-size6of8,
-.u-size9of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 75% !important;
-}
-
-.u-size4of5,
-.u-size8of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 80% !important;
-}
-
-.u-size5of6,
-.u-size10of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 5 / 6) !important;
-}
-
-.u-size7of8 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 87.5% !important;
-}
-
-.u-size9of10 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: 90% !important;
-}
-
-.u-size11of12 {
-  -webkit-flex-basis: auto !important;
-      -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important;
-  width: calc(100% * 11 / 12) !important;
-}
 /**
  * @define utilities
  * Size: breakpoint 1 (small)
  */
 
 @media (min-width:480px) and (max-width:640px) {
+
+  /* Proportional widths: breakpoint 1 (small)
+     ========================================================================== */
+
+  /**
+   * Specify the proportional width of an object.
+   * Intentional redundancy build into each set of unit classes.
+   * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+   *
+   * 1. Use `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11
+   *    http://git.io/vllMD
+   */
+
+  /* postcss-bem-linter: ignore */
+  [class*="u-sm-size"] {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  .u-sm-size1of12 {
+    width: calc(100% * 1 / 12) !important;
+  }
+
+  .u-sm-size1of10 {
+    width: 10% !important;
+  }
+
+  .u-sm-size1of8 {
+    width: 12.5% !important;
+  }
+
+  .u-sm-size1of6,
+  .u-sm-size2of12 {
+    width: calc(100% * 1 / 6) !important;
+  }
+
+  .u-sm-size1of5,
+  .u-sm-size2of10 {
+    width: 20% !important;
+  }
+
+  .u-sm-size1of4,
+  .u-sm-size2of8,
+  .u-sm-size3of12 {
+    width: 25% !important;
+  }
+
+  .u-sm-size3of10 {
+    width: 30% !important;
+  }
+
+  .u-sm-size1of3,
+  .u-sm-size2of6,
+  .u-sm-size4of12 {
+    width: calc(100% * 1 / 3) !important;
+  }
+
+  .u-sm-size3of8 {
+    width: 37.5% !important;
+  }
+
+  .u-sm-size2of5,
+  .u-sm-size4of10 {
+    width: 40% !important;
+  }
+
+  .u-sm-size5of12 {
+    width: calc(100% * 5 / 12) !important;
+  }
+
+  .u-sm-size1of2,
+  .u-sm-size2of4,
+  .u-sm-size3of6,
+  .u-sm-size4of8,
+  .u-sm-size5of10,
+  .u-sm-size6of12 {
+    width: 50% !important;
+  }
+
+  .u-sm-size7of12 {
+    width: calc(100% * 7 / 12) !important;
+  }
+
+  .u-sm-size3of5,
+  .u-sm-size6of10 {
+    width: 60% !important;
+  }
+
+  .u-sm-size5of8 {
+    width: 62.5% !important;
+  }
+
+  .u-sm-size2of3,
+  .u-sm-size4of6,
+  .u-sm-size8of12 {
+    width: calc(100% * 2 / 3) !important;
+  }
+
+  .u-sm-size7of10 {
+    width: 70% !important;
+  }
+
+  .u-sm-size3of4,
+  .u-sm-size6of8,
+  .u-sm-size9of12 {
+    width: 75% !important;
+  }
+
+  .u-sm-size4of5,
+  .u-sm-size8of10 {
+    width: 80% !important;
+  }
+
+  .u-sm-size5of6,
+  .u-sm-size10of12 {
+    width: calc(100% * 5 / 6) !important;
+  }
+
+  .u-sm-size7of8 {
+    width: 87.5% !important;
+  }
+
+  .u-sm-size9of10 {
+    width: 90% !important;
+  }
+
+  .u-sm-size11of12 {
+    width: calc(100% * 11 / 12) !important;
+  }
 
   /* Intrinsic widths
      ========================================================================== */
@@ -391,6 +410,23 @@
   }
 
   /**
+   * An alternative method to make an element fill the remaining space.
+   * Distributes space based on the initial width and height of the element
+   *
+   * http://www.w3.org/TR/css-flexbox/images/rel-vs-abs-flex.svg
+   */
+
+  .u-sm-sizeFillAlt {
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
+
+  /**
    * Make an element the width of its parent.
    */
 
@@ -400,197 +436,6 @@
     width: 100% !important;
   }
 
-  /* Proportional widths: breakpoint 1 (small)
-     ========================================================================== */
-
-  /**
-   * Specify the proportional width of an object.
-   * Intentional redundancy build into each set of unit classes.
-   * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
-   *
-   * Uses `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11 - http://git.io/vllMD
-   */
-
-  .u-sm-size1of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 12) !important;
-  }
-
-  .u-sm-size1of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 10% !important;
-  }
-
-  .u-sm-size1of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 12.5% !important;
-  }
-
-  .u-sm-size1of6,
-  .u-sm-size2of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 6) !important;
-  }
-
-  .u-sm-size1of5,
-  .u-sm-size2of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 20% !important;
-  }
-
-  .u-sm-size1of4,
-  .u-sm-size2of8,
-  .u-sm-size3of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 25% !important;
-  }
-
-  .u-sm-size3of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 30% !important;
-  }
-
-  .u-sm-size1of3,
-  .u-sm-size2of6,
-  .u-sm-size4of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 3) !important;
-  }
-
-  .u-sm-size3of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 37.5% !important;
-  }
-
-  .u-sm-size2of5,
-  .u-sm-size4of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 40% !important;
-  }
-
-  .u-sm-size5of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 5 / 12) !important;
-  }
-
-  .u-sm-size1of2,
-  .u-sm-size2of4,
-  .u-sm-size3of6,
-  .u-sm-size4of8,
-  .u-sm-size5of10,
-  .u-sm-size6of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 50% !important;
-  }
-
-  .u-sm-size7of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 7 / 12) !important;
-  }
-
-  .u-sm-size3of5,
-  .u-sm-size6of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 60% !important;
-  }
-
-  .u-sm-size5of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 62.5% !important;
-  }
-
-  .u-sm-size2of3,
-  .u-sm-size4of6,
-  .u-sm-size8of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 2 / 3) !important;
-  }
-
-  .u-sm-size7of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 70% !important;
-  }
-
-  .u-sm-size3of4,
-  .u-sm-size6of8,
-  .u-sm-size9of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 75% !important;
-  }
-
-  .u-sm-size4of5,
-  .u-sm-size8of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 80% !important;
-  }
-
-  .u-sm-size5of6,
-  .u-sm-size10of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 5 / 6) !important;
-  }
-
-  .u-sm-size7of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 87.5% !important;
-  }
-
-  .u-sm-size9of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 90% !important;
-  }
-
-  .u-sm-size11of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 11 / 12) !important;
-  }
-
 }
 /**
  * @define utilities
@@ -598,6 +443,136 @@
  */
 
 @media (min-width:640px) and (max-width:960px) {
+
+  /* Proportional widths: breakpoint 2 (medium)
+     ========================================================================== */
+
+  /**
+   * Specify the proportional width of an object.
+   * Intentional redundancy build into each set of unit classes.
+   * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+   *
+   * 1. Use `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11
+   *    http://git.io/vllMD
+   */
+
+  /* postcss-bem-linter: ignore */
+  [class*="u-md-size"] {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  .u-md-size1of12 {
+    width: calc(100% * 1 / 12) !important;
+  }
+
+  .u-md-size1of10 {
+    width: 10% !important;
+  }
+
+  .u-md-size1of8 {
+    width: 12.5% !important;
+  }
+
+  .u-md-size1of6,
+  .u-md-size2of12 {
+    width: calc(100% * 1 / 6) !important;
+  }
+
+  .u-md-size1of5,
+  .u-md-size2of10 {
+    width: 20% !important;
+  }
+
+  .u-md-size1of4,
+  .u-md-size2of8,
+  .u-md-size3of12 {
+    width: 25% !important;
+  }
+
+  .u-md-size3of10 {
+    width: 30% !important;
+  }
+
+  .u-md-size1of3,
+  .u-md-size2of6,
+  .u-md-size4of12 {
+    width: calc(100% * 1 / 3) !important;
+  }
+
+  .u-md-size3of8 {
+    width: 37.5% !important;
+  }
+
+  .u-md-size2of5,
+  .u-md-size4of10 {
+    width: 40% !important;
+  }
+
+  .u-md-size5of12 {
+    width: calc(100% * 5 / 12) !important;
+  }
+
+  .u-md-size1of2,
+  .u-md-size2of4,
+  .u-md-size3of6,
+  .u-md-size4of8,
+  .u-md-size5of10,
+  .u-md-size6of12 {
+    width: 50% !important;
+  }
+
+  .u-md-size7of12 {
+    width: calc(100% * 7 / 12) !important;
+  }
+
+  .u-md-size3of5,
+  .u-md-size6of10 {
+    width: 60% !important;
+  }
+
+  .u-md-size5of8 {
+    width: 62.5% !important;
+  }
+
+  .u-md-size2of3,
+  .u-md-size4of6,
+  .u-md-size8of12 {
+    width: calc(100% * 2 / 3) !important;
+  }
+
+  .u-md-size7of10 {
+    width: 70% !important;
+  }
+
+  .u-md-size3of4,
+  .u-md-size6of8,
+  .u-md-size9of12 {
+    width: 75% !important;
+  }
+
+  .u-md-size4of5,
+  .u-md-size8of10 {
+    width: 80% !important;
+  }
+
+  .u-md-size5of6,
+  .u-md-size10of12 {
+    width: calc(100% * 5 / 6) !important;
+  }
+
+  .u-md-size7of8 {
+    width: 87.5% !important;
+  }
+
+  .u-md-size9of10 {
+    width: 90% !important;
+  }
+
+  .u-md-size11of12 {
+    width: calc(100% * 11 / 12) !important;
+  }
 
   /* Intrinsic widths
      ========================================================================== */
@@ -620,6 +595,23 @@
   }
 
   /**
+   * An alternative method to make an element fill the remaining space.
+   * Distributes space based on the initial width and height of the element
+   *
+   * http://www.w3.org/TR/css-flexbox/images/rel-vs-abs-flex.svg
+   */
+
+  .u-md-sizeFillAlt {
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
+
+  /**
    * Make an element the width of its parent.
    */
 
@@ -629,197 +621,6 @@
     width: 100% !important;
   }
 
-  /* Proportional widths: breakpoint 2 (medium)
-     ========================================================================== */
-
-  /**
-   * Specify the proportional width of an object.
-   * Intentional redundancy build into each set of unit classes.
-   * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
-   *
-   * Uses `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11 - http://git.io/vllMD
-   */
-
-  .u-md-size1of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 12) !important;
-  }
-
-  .u-md-size1of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 10% !important;
-  }
-
-  .u-md-size1of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 12.5% !important;
-  }
-
-  .u-md-size1of6,
-  .u-md-size2of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 6) !important;
-  }
-
-  .u-md-size1of5,
-  .u-md-size2of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 20% !important;
-  }
-
-  .u-md-size1of4,
-  .u-md-size2of8,
-  .u-md-size3of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 25% !important;
-  }
-
-  .u-md-size3of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 30% !important;
-  }
-
-  .u-md-size1of3,
-  .u-md-size2of6,
-  .u-md-size4of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 3) !important;
-  }
-
-  .u-md-size3of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 37.5% !important;
-  }
-
-  .u-md-size2of5,
-  .u-md-size4of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 40% !important;
-  }
-
-  .u-md-size5of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 5 / 12) !important;
-  }
-
-  .u-md-size1of2,
-  .u-md-size2of4,
-  .u-md-size3of6,
-  .u-md-size4of8,
-  .u-md-size5of10,
-  .u-md-size6of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 50% !important;
-  }
-
-  .u-md-size7of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 7 / 12) !important;
-  }
-
-  .u-md-size3of5,
-  .u-md-size6of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 60% !important;
-  }
-
-  .u-md-size5of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 62.5% !important;
-  }
-
-  .u-md-size2of3,
-  .u-md-size4of6,
-  .u-md-size8of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 2 / 3) !important;
-  }
-
-  .u-md-size7of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 70% !important;
-  }
-
-  .u-md-size3of4,
-  .u-md-size6of8,
-  .u-md-size9of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 75% !important;
-  }
-
-  .u-md-size4of5,
-  .u-md-size8of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 80% !important;
-  }
-
-  .u-md-size5of6,
-  .u-md-size10of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 5 / 6) !important;
-  }
-
-  .u-md-size7of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 87.5% !important;
-  }
-
-  .u-md-size9of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 90% !important;
-  }
-
-  .u-md-size11of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 11 / 12) !important;
-  }
-
 }
 /**
  * @define utilities
@@ -827,6 +628,136 @@
  */
 
 @media (min-width:960px) {
+
+  /* Proportional widths: breakpoint 3 (large)
+     ========================================================================== */
+
+  /**
+   * Specify the proportional width of an object.
+   * Intentional redundancy build into each set of unit classes.
+   * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+   *
+   * 1. Use `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11
+   *    http://git.io/vllMD
+   */
+
+  /* postcss-bem-linter: ignore */
+  [class*="u-lg-size"] {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  .u-lg-size1of12 {
+    width: calc(100% * 1 / 12) !important;
+  }
+
+  .u-lg-size1of10 {
+    width: 10% !important;
+  }
+
+  .u-lg-size1of8 {
+    width: 12.5% !important;
+  }
+
+  .u-lg-size1of6,
+  .u-lg-size2of12 {
+    width: calc(100% * 1 / 6) !important;
+  }
+
+  .u-lg-size1of5,
+  .u-lg-size2of10 {
+    width: 20% !important;
+  }
+
+  .u-lg-size1of4,
+  .u-lg-size2of8,
+  .u-lg-size3of12 {
+    width: 25% !important;
+  }
+
+  .u-lg-size3of10 {
+    width: 30% !important;
+  }
+
+  .u-lg-size1of3,
+  .u-lg-size2of6,
+  .u-lg-size4of12 {
+    width: calc(100% * 1 / 3) !important;
+  }
+
+  .u-lg-size3of8 {
+    width: 37.5% !important;
+  }
+
+  .u-lg-size2of5,
+  .u-lg-size4of10 {
+    width: 40% !important;
+  }
+
+  .u-lg-size5of12 {
+    width: calc(100% * 5 / 12) !important;
+  }
+
+  .u-lg-size1of2,
+  .u-lg-size2of4,
+  .u-lg-size3of6,
+  .u-lg-size4of8,
+  .u-lg-size5of10,
+  .u-lg-size6of12 {
+    width: 50% !important;
+  }
+
+  .u-lg-size7of12 {
+    width: calc(100% * 7 / 12) !important;
+  }
+
+  .u-lg-size3of5,
+  .u-lg-size6of10 {
+    width: 60% !important;
+  }
+
+  .u-lg-size5of8 {
+    width: 62.5% !important;
+  }
+
+  .u-lg-size2of3,
+  .u-lg-size4of6,
+  .u-lg-size8of12 {
+    width: calc(100% * 2 / 3) !important;
+  }
+
+  .u-lg-size7of10 {
+    width: 70% !important;
+  }
+
+  .u-lg-size3of4,
+  .u-lg-size6of8,
+  .u-lg-size9of12 {
+    width: 75% !important;
+  }
+
+  .u-lg-size4of5,
+  .u-lg-size8of10 {
+    width: 80% !important;
+  }
+
+  .u-lg-size5of6,
+  .u-lg-size10of12 {
+    width: calc(100% * 5 / 6) !important;
+  }
+
+  .u-lg-size7of8 {
+    width: 87.5% !important;
+  }
+
+  .u-lg-size9of10 {
+    width: 90% !important;
+  }
+
+  .u-lg-size11of12 {
+    width: calc(100% * 11 / 12) !important;
+  }
 
   /* Intrinsic widths
      ========================================================================== */
@@ -849,6 +780,23 @@
   }
 
   /**
+   * An alternative method to make an element fill the remaining space.
+   * Distributes space based on the initial width and height of the element
+   *
+   * http://www.w3.org/TR/css-flexbox/images/rel-vs-abs-flex.svg
+   */
+
+  .u-lg-sizeFillAlt {
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
+
+  /**
    * Make an element the width of its parent.
    */
 
@@ -858,202 +806,22 @@
     width: 100% !important;
   }
 
-  /* Proportional widths: breakpoint 3 (large)
-     ========================================================================== */
-
-  /**
-   * Specify the proportional width of an object.
-   * Intentional redundancy build into each set of unit classes.
-   * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
-   *
-   * Uses `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11 - http://git.io/vllMD
-   */
-
-  .u-lg-size1of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 12) !important;
-  }
-
-  .u-lg-size1of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 10% !important;
-  }
-
-  .u-lg-size1of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 12.5% !important;
-  }
-
-  .u-lg-size1of6,
-  .u-lg-size2of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 6) !important;
-  }
-
-  .u-lg-size1of5,
-  .u-lg-size2of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 20% !important;
-  }
-
-  .u-lg-size1of4,
-  .u-lg-size2of8,
-  .u-lg-size3of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 25% !important;
-  }
-
-  .u-lg-size3of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 30% !important;
-  }
-
-  .u-lg-size1of3,
-  .u-lg-size2of6,
-  .u-lg-size4of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 1 / 3) !important;
-  }
-
-  .u-lg-size3of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 37.5% !important;
-  }
-
-  .u-lg-size2of5,
-  .u-lg-size4of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 40% !important;
-  }
-
-  .u-lg-size5of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 5 / 12) !important;
-  }
-
-  .u-lg-size1of2,
-  .u-lg-size2of4,
-  .u-lg-size3of6,
-  .u-lg-size4of8,
-  .u-lg-size5of10,
-  .u-lg-size6of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 50% !important;
-  }
-
-  .u-lg-size7of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 7 / 12) !important;
-  }
-
-  .u-lg-size3of5,
-  .u-lg-size6of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 60% !important;
-  }
-
-  .u-lg-size5of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 62.5% !important;
-  }
-
-  .u-lg-size2of3,
-  .u-lg-size4of6,
-  .u-lg-size8of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 2 / 3) !important;
-  }
-
-  .u-lg-size7of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 70% !important;
-  }
-
-  .u-lg-size3of4,
-  .u-lg-size6of8,
-  .u-lg-size9of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 75% !important;
-  }
-
-  .u-lg-size4of5,
-  .u-lg-size8of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 80% !important;
-  }
-
-  .u-lg-size5of6,
-  .u-lg-size10of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 5 / 6) !important;
-  }
-
-  .u-lg-size7of8 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 87.5% !important;
-  }
-
-  .u-lg-size9of10 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: 90% !important;
-  }
-
-  .u-lg-size11of12 {
-    -webkit-flex-basis: auto !important;
-        -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important;
-    width: calc(100% * 11 / 12) !important;
-  }
-
 }
 /** @define utilities */
 
 /* Applies to flex container
    ========================================================================== */
+
+/**
+ * Flex container
+ */
+
+.u-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 
 /**
  * Direction: row
@@ -1319,6 +1087,51 @@
       -ms-flex-order: 0 !important;
           order: 0 !important;
 }
+
+/**
+ * Specify the flex grow factor, which determines how much the flex item will
+ * grow relative to the rest of the flex items in the flex container.
+ *
+ * Supports 1-5 proportions
+ *
+ * 1. Provide all values to avoid IE10 bug with shorthand flex - http://git.io/vllC7
+ *    Use `0%` to avoid bug in IE10/11 with unitless flex basis - http://git.io/vllWx
+ */
+
+.u-flexGrow1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0%;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%; /* 1 */
+}
+
+.u-flexGrow2 {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 1 0%;
+      -ms-flex: 2 1 0%;
+          flex: 2 1 0%;
+}
+
+.u-flexGrow3 {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3 1 0%;
+      -ms-flex: 3 1 0%;
+          flex: 3 1 0%;
+}
+
+.u-flexGrow4 {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4 1 0%;
+      -ms-flex: 4 1 0%;
+          flex: 4 1 0%;
+}
+
+.u-flexGrow5 {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5 1 0%;
+      -ms-flex: 5 1 0%;
+          flex: 5 1 0%;
+}
 /**
  * @define utilities
  * Size: breakpoint 1 (small)
@@ -1328,6 +1141,17 @@
 
   /* Applies to flex container
      ========================================================================== */
+
+  /**
+   * Flex container
+   */
+
+  .u-sm-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 
   /**
    * Direction: row
@@ -1594,6 +1418,51 @@
             order: 0 !important;
   }
 
+  /**
+   * Specify the flex grow factor, which determines how much the flex item will
+   * grow relative to the rest of the flex items in the flex container.
+   *
+   * Supports 1-5 proportions
+   *
+   * 1. Provide all values to avoid IE10 bug with shorthand flex - http://git.io/vllC7
+   *    Use `0%` to avoid bug in IE10/11 with unitless flex basis - http://git.io/vllWx
+   */
+
+  .u-sm-flexGrow1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%; /* 1 */
+  }
+
+  .u-sm-flexGrow2 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2 1 0%;
+        -ms-flex: 2 1 0%;
+            flex: 2 1 0%;
+  }
+
+  .u-sm-flexGrow3 {
+    -webkit-box-flex: 3;
+    -webkit-flex: 3 1 0%;
+        -ms-flex: 3 1 0%;
+            flex: 3 1 0%;
+  }
+
+  .u-sm-flexGrow4 {
+    -webkit-box-flex: 4;
+    -webkit-flex: 4 1 0%;
+        -ms-flex: 4 1 0%;
+            flex: 4 1 0%;
+  }
+
+  .u-sm-flexGrow5 {
+    -webkit-box-flex: 5;
+    -webkit-flex: 5 1 0%;
+        -ms-flex: 5 1 0%;
+            flex: 5 1 0%;
+  }
+
 }
 /**
  * @define utilities
@@ -1604,6 +1473,17 @@
 
   /* Applies to flex container
      ========================================================================== */
+
+  /**
+   * Flex container
+   */
+
+  .u-md-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 
   /**
    * Direction: row
@@ -1870,6 +1750,51 @@
             order: 0 !important;
   }
 
+  /**
+   * Specify the flex grow factor, which determines how much the flex item will
+   * grow relative to the rest of the flex items in the flex container.
+   *
+   * Supports 1-5 proportions
+   *
+   * 1. Provide all values to avoid IE10 bug with shorthand flex - http://git.io/vllC7
+   *    Use `0%` to avoid bug in IE10/11 with unitless flex basis - http://git.io/vllWx
+   */
+
+  .u-md-flexGrow1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%; /* 1 */
+  }
+
+  .u-md-flexGrow2 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2 1 0%;
+        -ms-flex: 2 1 0%;
+            flex: 2 1 0%;
+  }
+
+  .u-md-flexGrow3 {
+    -webkit-box-flex: 3;
+    -webkit-flex: 3 1 0%;
+        -ms-flex: 3 1 0%;
+            flex: 3 1 0%;
+  }
+
+  .u-md-flexGrow4 {
+    -webkit-box-flex: 4;
+    -webkit-flex: 4 1 0%;
+        -ms-flex: 4 1 0%;
+            flex: 4 1 0%;
+  }
+
+  .u-md-flexGrow5 {
+    -webkit-box-flex: 5;
+    -webkit-flex: 5 1 0%;
+        -ms-flex: 5 1 0%;
+            flex: 5 1 0%;
+  }
+
 }
 /**
  * @define utilities
@@ -1880,6 +1805,17 @@
 
   /* Applies to flex container
      ========================================================================== */
+
+  /**
+   * Flex container
+   */
+
+  .u-lg-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 
   /**
    * Direction: row
@@ -2144,6 +2080,51 @@
     -webkit-order: 0 !important;
         -ms-flex-order: 0 !important;
             order: 0 !important;
+  }
+
+  /**
+   * Specify the flex grow factor, which determines how much the flex item will
+   * grow relative to the rest of the flex items in the flex container.
+   *
+   * Supports 1-5 proportions
+   *
+   * 1. Provide all values to avoid IE10 bug with shorthand flex - http://git.io/vllC7
+   *    Use `0%` to avoid bug in IE10/11 with unitless flex basis - http://git.io/vllWx
+   */
+
+  .u-lg-flexGrow1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%; /* 1 */
+  }
+
+  .u-lg-flexGrow2 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2 1 0%;
+        -ms-flex: 2 1 0%;
+            flex: 2 1 0%;
+  }
+
+  .u-lg-flexGrow3 {
+    -webkit-box-flex: 3;
+    -webkit-flex: 3 1 0%;
+        -ms-flex: 3 1 0%;
+            flex: 3 1 0%;
+  }
+
+  .u-lg-flexGrow4 {
+    -webkit-box-flex: 4;
+    -webkit-flex: 4 1 0%;
+        -ms-flex: 4 1 0%;
+            flex: 4 1 0%;
+  }
+
+  .u-lg-flexGrow5 {
+    -webkit-box-flex: 5;
+    -webkit-flex: 5 1 0%;
+        -ms-flex: 5 1 0%;
+            flex: 5 1 0%;
   }
 
 }
