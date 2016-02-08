@@ -1,8 +1,10 @@
 # SUIT CSS utilities: flex
 
+[![Build Status](https://travis-ci.org/suitcss/utils-flex.svg?branch=master)](https://travis-ci.org/suitcss/utils-flex)
+
 SUIT CSS flexbox utilities
 
-* Read more about [Flexbox and its usage](http://www.w3.org/TR/css-flexbox/)
+* Read more about [flexbox and its usage](http://www.w3.org/TR/css-flexbox/)
 * Read more about [SUIT CSS's design principles](https://github.com/suitcss/suit/).
 
 ## Installation
@@ -74,6 +76,16 @@ SUIT CSS flexbox utilities
 * `u-flexGrowX` - Specify how much the flex item will grow relatively
 
 `X` can be any of the following numbers: `1`, `2`, `3`, `4`, `5`.
+
+**Aligning with `auto` margins**
+
+* `u-flexExpand` - Expand all margins to fill remaining space
+* `u-flexExpandTop` - Expand top margin to fill remaining space
+* `u-flexExpandRight` - Expand right margin to fill remaining space
+* `u-flexExpandBottom` - Expand bottom margin to fill remaining space
+* `u-flexExpandLeft` - Expand left margin to fill remaining space
+
+[Read more](https://medium.com/@samserif/flexbox-s-best-kept-secret-bd3d892826b6) about how this works.
 
 ### Plugins
 
@@ -160,6 +172,12 @@ To generate a build:
 
 ```
 npm run build
+```
+
+To lint code with [postcss-bem-linter](https://github.com/postcss/postcss-bem-linter) and [stylelint](http://stylelint.io/)
+
+```
+npm run lint
 ```
 
 To generate the testing build.

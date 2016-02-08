@@ -6,7 +6,7 @@
 @media (--md-viewport) {
 
   /* Applies to flex container
-     ========================================================================== */
+     ======================================================================== */
 
   /**
    * Container
@@ -37,11 +37,11 @@
    */
 
   .u-md-flexCol {
-     flex-direction: column !important;
+    flex-direction: column !important;
   }
 
   .u-md-flexColReverse {
-     flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
   }
 
   /**
@@ -110,7 +110,8 @@
   }
 
   /**
-   * Aligns items within the flex container when there is extra space in the cross-axis
+   * Aligns items within the flex container when there is extra
+   * space in the cross-axis
    *
    * Has no effect when there is only one line of flex items.
    */
@@ -142,18 +143,16 @@
   /**
    * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
    */
+
   /* postcss-bem-linter: ignore */
-  .u-md-flexRow > *,
-  .u-md-flexRowReverse > *,
-  .u-md-flexNoWrap > *,
-  [class*="u-md-flexJustify"] > *,
-  [class*="u-md-flexAlignItems"] > *,
-  [class*="u-md-flexAlignContent"] > * {
+
+  .u-md-flex > *,
+  .u-md-flexInline > * {
     flex-shrink: 1; /* 1 */
   }
 
   /* Applies to flex items
-     ========================================================================== */
+     ======================================================================== */
 
   /**
    * Override default alignment of single item when specified by `align-items`
@@ -205,8 +204,11 @@
    *
    * Supports 1-5 proportions
    *
-   * 1. Provide all values to avoid IE10 bug with shorthand flex - http://git.io/vllC7
-   *    Use `0%` to avoid bug in IE10/11 with unitless flex basis - http://git.io/vllWx
+   * 1. Provide all values to avoid IE10 bug with shorthand flex
+   *    http://git.io/vllC7
+   *
+   *    Use `0%` to avoid bug in IE10/11 with unitless flex basis
+   *    http://git.io/vllWx
    */
 
   .u-md-flexGrow1 {
@@ -227,6 +229,31 @@
 
   .u-md-flexGrow5 {
     flex: 5 1 0% !important;
+  }
+
+  /**
+   * Aligning with `auto` margins
+   * http://www.w3.org/TR/css-flexbox-1/#auto-margins
+   */
+
+  .u-md-flexExpand {
+    margin: auto !important;
+  }
+
+  .u-md-flexExpandLeft {
+    margin-left: auto !important;
+  }
+
+  .u-md-flexExpandRight {
+    margin-right: auto !important;
+  }
+
+  .u-md-flexExpandTop {
+    margin-top: auto !important;
+  }
+
+  .u-md-flexExpandBottom {
+    margin-bottom: auto !important;
   }
 
 }
