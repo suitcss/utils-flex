@@ -1,7 +1,9 @@
 ### HEAD
 
-* Enable BEM linter reporting in tests
-* Update stylelint-config-suitcss to `4.0.0`
+* Add utils for `flex-basis` and `flex` shorthand (initial, auto, none)
+* Add `flex-shrink` utility
+* Remove IE10 hack for applying `flex-shrink` to all children
+* Update suitcss-preprocessor to `3.0.1`
 * Move custom media below imports to fix warning
 
 ### 1.1.1 (February 08, 2016)

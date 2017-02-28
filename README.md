@@ -77,6 +77,29 @@ SUIT CSS flexbox utilities
 
 `X` can be any of the following numbers: `1`, `2`, `3`, `4`, `5`.
 
+**`flex-shrink`**
+
+* `u-flexShrinkX` - Specify how much the flex item will shrink relatively
+
+`X` can be any of the following numbers: `0`, `1`, `2`, `3`, `4`, `5`.
+
+**`flex-basis`**
+
+Used to override other utilities and tweak [how space is
+distributed](https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg).
+
+* `u-flexBasisAuto`
+* `u-flexBasis0`
+
+**`flex` shorthand**
+
+* `u-flexInitial` - Sizes the item based on the width/height properties
+* `u-flexAuto` - Sizes the item based on the width/height properties, but makes
+  them fully flexible, so that they absorb any free space along the main axis.
+* `u-flexNone` - Sizes the item according to the width/height properties, but
+  makes the flex item fully inflexible. Similar to initial, except that flex
+  items are not allowed to shrink, even in overflow situations.
+
 **Aligning with `auto` margins**
 
 * `u-flexExpand` - Expand all margins to fill remaining space
@@ -159,6 +182,25 @@ Note: The `Grid` component already sets `display: flex` on the root element.
 ```
 
 Please refer to the README for [SUIT CSS utils](https://github.com/suitcss/utils/)
+
+## Setting `flex-shrink` in IE10
+
+In IE10 it is required to [explicitly set `flex-shrink` on flex
+items](https://github.com/philipwalton/flexbugs#6-the-default-flex-value-has-changed),
+or use the longhand `flex` declaration.
+
+In prior versions of `utils-flex` this was set automatically on all flex items.
+Due to issues with specificity this has been removed.
+
+Should you need to apply the fix for IE10 then add a `u-flexShrink` class
+manually:
+
+```html
+<div class="u-flex u-flexNoWrap">
+  <div class="FlexItem u-flexShrink1">Content</div>
+  <div class="FlexItem u-flexShrink1">Content</div>
+</div>
+```
 
 ## Testing
 

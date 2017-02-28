@@ -140,17 +140,6 @@
     align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-sm-flex > *,
-  .u-sm-flexInline > * {
-    flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -232,6 +221,35 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-sm-flexShrink0 {
+    flex-shrink: 0 !important;
+  }
+
+  .u-sm-flexShrink1 {
+    flex-shrink: 1 !important;
+  }
+
+  .u-sm-flexShrink2 {
+    flex-shrink: 2 !important;
+  }
+
+  .u-sm-flexShrink3 {
+    flex-shrink: 3 !important;
+  }
+
+  .u-sm-flexShrink4 {
+    flex-shrink: 4 !important;
+  }
+
+  .u-sm-flexShrink5 {
+    flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -254,6 +272,58 @@
 
   .u-sm-flexExpandBottom {
     margin-bottom: auto !important;
+  }
+
+  /**
+   * Basis
+   */
+
+  .u-sm-flexBasisAuto {
+    flex-basis: auto !important;
+  }
+
+  .u-sm-flexBasis0 {
+    flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-sm-flexInitial {
+    flex: 0 1 auto !important;
+    flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-sm-flexAuto {
+    flex: 1 1 auto !important;
+    flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-sm-flexNone {
+    flex: 0 0 auto !important;
+    flex-basis: auto !important; /* 1 */
   }
 
 }
