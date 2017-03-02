@@ -1,4 +1,4 @@
-/** @define Test; use strict */
+/** @define Test */
 
 /**
  * The 'describe' CSS counter
@@ -8,7 +8,7 @@
   counter-reset: test-describe;
 }
 
-.Test-describe:before {
+.Test-describe::before {
   content: counter(test-describe);
   counter-increment: test-describe;
 }
@@ -21,7 +21,7 @@
   counter-reset: test-it;
 }
 
-.Test-it:before {
+.Test-it::before {
   content: counter(test-describe) "." counter(test-it);
   counter-increment: test-it;
 }
@@ -31,12 +31,12 @@
  */
 
 .Test-title {
-  font-size: 2em;
-  font-family: sans-serif;
-  padding: 20px;
-  margin: 20px 0;
   background: #eee;
   color: #999;
+  font-family: sans-serif;
+  font-size: 2em;
+  margin: 20px 0;
+  padding: 20px;
 }
 
 /**
@@ -63,8 +63,8 @@
  * The counter styles
  */
 
-.Test-describe:before,
-.Test-it:before {
+.Test-describe::before,
+.Test-it::before {
   color: #999;
   display: inline-block;
   margin-right: 10px;
@@ -89,62 +89,87 @@
  *    http://git.io/vllMD
  */
 
-/* postcss-bem-linter: ignore */
-
-[class*="u-size"] {
+.u-size1of12 {
   -webkit-flex-basis: auto !important;
       -ms-flex-preferred-size: auto !important;
-          flex-basis: auto !important; /* 1 */
-}
-
-.u-size1of12 {
+          flex-basis: auto !important;
   width: 8.33333% !important;
 }
 
 .u-size1of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 10% !important;
 }
 
 .u-size1of8 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 12.5% !important;
 }
 
 .u-size1of6,
 .u-size2of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 16.66667% !important;
 }
 
 .u-size1of5,
 .u-size2of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 20% !important;
 }
 
 .u-size1of4,
 .u-size2of8,
 .u-size3of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 25% !important;
 }
 
 .u-size3of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 30% !important;
 }
 
 .u-size1of3,
 .u-size2of6,
 .u-size4of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 33.33333% !important;
 }
 
 .u-size3of8 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 37.5% !important;
 }
 
 .u-size2of5,
 .u-size4of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 40% !important;
 }
 
 .u-size5of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 41.66667% !important;
 }
 
@@ -154,57 +179,93 @@
 .u-size4of8,
 .u-size5of10,
 .u-size6of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 50% !important;
 }
 
 .u-size7of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 58.33333% !important;
 }
 
 .u-size3of5,
 .u-size6of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 60% !important;
 }
 
 .u-size5of8 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 62.5% !important;
 }
 
 .u-size2of3,
 .u-size4of6,
 .u-size8of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 66.66667% !important;
 }
 
 .u-size7of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 70% !important;
 }
 
 .u-size3of4,
 .u-size6of8,
 .u-size9of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 75% !important;
 }
 
 .u-size4of5,
 .u-size8of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 80% !important;
 }
 
 .u-size5of6,
 .u-size10of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 83.33333% !important;
 }
 
 .u-size7of8 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 87.5% !important;
 }
 
 .u-size9of10 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 90% !important;
 }
 
 .u-size11of12 {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
   width: 91.66667% !important;
 }
 
@@ -212,10 +273,22 @@
    ========================================================================== */
 
 /**
+ * Make an element shrink wrap its content.
+ */
+
+.u-sizeFit {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
+}
+
+/**
  * Make an element fill the remaining space.
  *
- * 1. Be explicit to work around IE10 bug with shorthand flex - http://git.io/vllC7
- * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes - http://git.io/vllMt
+ * 1. Be explicit to work around IE10 bug with shorthand flex
+ *    http://git.io/vllC7
+ * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
+ *    http://git.io/vllMt
  */
 
 .u-sizeFill {
@@ -250,8 +323,6 @@
  */
 
 .u-sizeFull {
-  box-sizing: border-box !important;
-  display: block !important;
   width: 100% !important;
 }
 
@@ -263,7 +334,7 @@
 @media (min-width:480px) and (max-width:640px) {
 
   /* Proportional widths: breakpoint 1 (small)
-     ========================================================================== */
+     ======================================================================== */
 
   /**
    * Specify the proportional width of an object.
@@ -274,62 +345,87 @@
    *    http://git.io/vllMD
    */
 
-  /* postcss-bem-linter: ignore */
-
-  [class*="u-sm-size"] {
+  .u-sm-size1of12 {
     -webkit-flex-basis: auto !important;
         -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important; /* 1 */
-  }
-
-  .u-sm-size1of12 {
+            flex-basis: auto !important;
     width: 8.33333% !important;
   }
 
   .u-sm-size1of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 10% !important;
   }
 
   .u-sm-size1of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 12.5% !important;
   }
 
   .u-sm-size1of6,
   .u-sm-size2of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 16.66667% !important;
   }
 
   .u-sm-size1of5,
   .u-sm-size2of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 20% !important;
   }
 
   .u-sm-size1of4,
   .u-sm-size2of8,
   .u-sm-size3of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 25% !important;
   }
 
   .u-sm-size3of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 30% !important;
   }
 
   .u-sm-size1of3,
   .u-sm-size2of6,
   .u-sm-size4of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 33.33333% !important;
   }
 
   .u-sm-size3of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 37.5% !important;
   }
 
   .u-sm-size2of5,
   .u-sm-size4of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 40% !important;
   }
 
   .u-sm-size5of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 41.66667% !important;
   }
 
@@ -339,68 +435,116 @@
   .u-sm-size4of8,
   .u-sm-size5of10,
   .u-sm-size6of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 50% !important;
   }
 
   .u-sm-size7of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 58.33333% !important;
   }
 
   .u-sm-size3of5,
   .u-sm-size6of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 60% !important;
   }
 
   .u-sm-size5of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 62.5% !important;
   }
 
   .u-sm-size2of3,
   .u-sm-size4of6,
   .u-sm-size8of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 66.66667% !important;
   }
 
   .u-sm-size7of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 70% !important;
   }
 
   .u-sm-size3of4,
   .u-sm-size6of8,
   .u-sm-size9of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 75% !important;
   }
 
   .u-sm-size4of5,
   .u-sm-size8of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 80% !important;
   }
 
   .u-sm-size5of6,
   .u-sm-size10of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 83.33333% !important;
   }
 
   .u-sm-size7of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 87.5% !important;
   }
 
   .u-sm-size9of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 90% !important;
   }
 
   .u-sm-size11of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 91.66667% !important;
   }
 
   /* Intrinsic widths
-     ========================================================================== */
+     ======================================================================== */
+
+  /**
+   * Make an element shrink wrap its content.
+   */
+
+  .u-sm-sizeFit {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
 
   /**
    * Make an element fill the remaining space.
    *
-   * 1. Be explicit to work around IE10 bug with shorthand flex - http://git.io/vllC7
-   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes - http://git.io/vllMt
+   * 1. Be explicit to work around IE10 bug with shorthand flex
+   *    http://git.io/vllC7
+   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
+   *    http://git.io/vllMt
    */
 
   .u-sm-sizeFill {
@@ -435,8 +579,6 @@
    */
 
   .u-sm-sizeFull {
-    box-sizing: border-box !important;
-    display: block !important;
     width: 100% !important;
   }
 
@@ -450,7 +592,7 @@
 @media (min-width:640px) and (max-width:960px) {
 
   /* Proportional widths: breakpoint 2 (medium)
-     ========================================================================== */
+     ======================================================================== */
 
   /**
    * Specify the proportional width of an object.
@@ -463,60 +605,87 @@
 
   /* postcss-bem-linter: ignore */
 
-  [class*="u-md-size"] {
+  .u-md-size1of12 {
     -webkit-flex-basis: auto !important;
         -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important; /* 1 */
-  }
-
-  .u-md-size1of12 {
+            flex-basis: auto !important;
     width: 8.33333% !important;
   }
 
   .u-md-size1of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 10% !important;
   }
 
   .u-md-size1of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 12.5% !important;
   }
 
   .u-md-size1of6,
   .u-md-size2of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 16.66667% !important;
   }
 
   .u-md-size1of5,
   .u-md-size2of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 20% !important;
   }
 
   .u-md-size1of4,
   .u-md-size2of8,
   .u-md-size3of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 25% !important;
   }
 
   .u-md-size3of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 30% !important;
   }
 
   .u-md-size1of3,
   .u-md-size2of6,
   .u-md-size4of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 33.33333% !important;
   }
 
   .u-md-size3of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 37.5% !important;
   }
 
   .u-md-size2of5,
   .u-md-size4of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 40% !important;
   }
 
   .u-md-size5of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 41.66667% !important;
   }
 
@@ -526,68 +695,116 @@
   .u-md-size4of8,
   .u-md-size5of10,
   .u-md-size6of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 50% !important;
   }
 
   .u-md-size7of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 58.33333% !important;
   }
 
   .u-md-size3of5,
   .u-md-size6of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 60% !important;
   }
 
   .u-md-size5of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 62.5% !important;
   }
 
   .u-md-size2of3,
   .u-md-size4of6,
   .u-md-size8of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 66.66667% !important;
   }
 
   .u-md-size7of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 70% !important;
   }
 
   .u-md-size3of4,
   .u-md-size6of8,
   .u-md-size9of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 75% !important;
   }
 
   .u-md-size4of5,
   .u-md-size8of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 80% !important;
   }
 
   .u-md-size5of6,
   .u-md-size10of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 83.33333% !important;
   }
 
   .u-md-size7of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 87.5% !important;
   }
 
   .u-md-size9of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 90% !important;
   }
 
   .u-md-size11of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 91.66667% !important;
   }
 
   /* Intrinsic widths
-     ========================================================================== */
+     ======================================================================== */
+
+  /**
+   * Make an element shrink wrap its content.
+   */
+
+  .u-md-sizeFit {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
 
   /**
    * Make an element fill the remaining space.
    *
-   * 1. Be explicit to work around IE10 bug with shorthand flex - http://git.io/vllC7
-   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes - http://git.io/vllMt
+   * 1. Be explicit to work around IE10 bug with shorthand flex
+   *    http://git.io/vllC7
+   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
+   *    http://git.io/vllMt
    */
 
   .u-md-sizeFill {
@@ -622,8 +839,6 @@
    */
 
   .u-md-sizeFull {
-    box-sizing: border-box !important;
-    display: block !important;
     width: 100% !important;
   }
 
@@ -637,7 +852,7 @@
 @media (min-width:960px) {
 
   /* Proportional widths: breakpoint 3 (large)
-     ========================================================================== */
+     ======================================================================== */
 
   /**
    * Specify the proportional width of an object.
@@ -648,62 +863,87 @@
    *    http://git.io/vllMD
    */
 
-  /* postcss-bem-linter: ignore */
-
-  [class*="u-lg-size"] {
+  .u-lg-size1of12 {
     -webkit-flex-basis: auto !important;
         -ms-flex-preferred-size: auto !important;
-            flex-basis: auto !important; /* 1 */
-  }
-
-  .u-lg-size1of12 {
+            flex-basis: auto !important;
     width: 8.33333% !important;
   }
 
   .u-lg-size1of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 10% !important;
   }
 
   .u-lg-size1of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 12.5% !important;
   }
 
   .u-lg-size1of6,
   .u-lg-size2of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 16.66667% !important;
   }
 
   .u-lg-size1of5,
   .u-lg-size2of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 20% !important;
   }
 
   .u-lg-size1of4,
   .u-lg-size2of8,
   .u-lg-size3of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 25% !important;
   }
 
   .u-lg-size3of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 30% !important;
   }
 
   .u-lg-size1of3,
   .u-lg-size2of6,
   .u-lg-size4of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 33.33333% !important;
   }
 
   .u-lg-size3of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 37.5% !important;
   }
 
   .u-lg-size2of5,
   .u-lg-size4of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 40% !important;
   }
 
   .u-lg-size5of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 41.66667% !important;
   }
 
@@ -713,68 +953,116 @@
   .u-lg-size4of8,
   .u-lg-size5of10,
   .u-lg-size6of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 50% !important;
   }
 
   .u-lg-size7of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 58.33333% !important;
   }
 
   .u-lg-size3of5,
   .u-lg-size6of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 60% !important;
   }
 
   .u-lg-size5of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 62.5% !important;
   }
 
   .u-lg-size2of3,
   .u-lg-size4of6,
   .u-lg-size8of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 66.66667% !important;
   }
 
   .u-lg-size7of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 70% !important;
   }
 
   .u-lg-size3of4,
   .u-lg-size6of8,
   .u-lg-size9of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 75% !important;
   }
 
   .u-lg-size4of5,
   .u-lg-size8of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 80% !important;
   }
 
   .u-lg-size5of6,
   .u-lg-size10of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 83.33333% !important;
   }
 
   .u-lg-size7of8 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 87.5% !important;
   }
 
   .u-lg-size9of10 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 90% !important;
   }
 
   .u-lg-size11of12 {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
     width: 91.66667% !important;
   }
 
   /* Intrinsic widths
-     ========================================================================== */
+     ======================================================================== */
+
+  /**
+   * Make an element shrink wrap its content.
+   */
+
+  .u-lg-sizeFit {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
 
   /**
    * Make an element fill the remaining space.
    *
-   * 1. Be explicit to work around IE10 bug with shorthand flex - http://git.io/vllC7
-   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes - http://git.io/vllMt
+   * 1. Be explicit to work around IE10 bug with shorthand flex
+   *    http://git.io/vllC7
+   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
+   *    http://git.io/vllMt
    */
 
   .u-lg-sizeFill {
@@ -809,8 +1097,6 @@
    */
 
   .u-lg-sizeFull {
-    box-sizing: border-box !important;
-    display: block !important;
     width: 100% !important;
   }
 
@@ -948,7 +1234,6 @@
   -webkit-box-align: start !important;
   -webkit-align-items: flex-start !important;
       -ms-flex-align: start !important;
-              -ms-grid-row-align: flex-start !important;
           align-items: flex-start !important;
 }
 
@@ -956,7 +1241,6 @@
   -webkit-box-align: end !important;
   -webkit-align-items: flex-end !important;
       -ms-flex-align: end !important;
-              -ms-grid-row-align: flex-end !important;
           align-items: flex-end !important;
 }
 
@@ -964,7 +1248,6 @@
   -webkit-box-align: center !important;
   -webkit-align-items: center !important;
       -ms-flex-align: center !important;
-              -ms-grid-row-align: center !important;
           align-items: center !important;
 }
 
@@ -972,7 +1255,6 @@
   -webkit-box-align: stretch !important;
   -webkit-align-items: stretch !important;
       -ms-flex-align: stretch !important;
-              -ms-grid-row-align: stretch !important;
           align-items: stretch !important;
 }
 
@@ -980,7 +1262,6 @@
   -webkit-box-align: baseline !important;
   -webkit-align-items: baseline !important;
       -ms-flex-align: baseline !important;
-              -ms-grid-row-align: baseline !important;
           align-items: baseline !important;
 }
 
@@ -1027,19 +1308,6 @@
           align-content: space-around !important;
 }
 
-/**
- * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
- */
-
-/* postcss-bem-linter: ignore */
-
-.u-flex > *,
-.u-flexInline > * {
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1; /* 1 */
-}
-
 /* Applies to flex items
    ========================================================================== */
 
@@ -1062,12 +1330,14 @@
 .u-flexAlignSelfCenter {
   -webkit-align-self: center !important;
       -ms-flex-item-align: center !important;
+              -ms-grid-row-align: center !important;
           align-self: center !important;
 }
 
 .u-flexAlignSelfStretch {
   -webkit-align-self: stretch !important;
       -ms-flex-item-align: stretch !important;
+              -ms-grid-row-align: stretch !important;
           align-self: stretch !important;
 }
 
@@ -1080,6 +1350,7 @@
 .u-flexAlignSelfAuto {
   -webkit-align-self: auto !important;
       -ms-flex-item-align: auto !important;
+              -ms-grid-row-align: auto !important;
           align-self: auto !important;
 }
 
@@ -1158,6 +1429,47 @@
 }
 
 /**
+ * Specify the flex shrink factor, which determines how much the flex item will
+ * shrink relative to the rest of the flex items in the flex container.
+ */
+
+.u-flexShrink0 {
+  -webkit-flex-shrink: 0 !important;
+      -ms-flex-negative: 0 !important;
+          flex-shrink: 0 !important;
+}
+
+.u-flexShrink1 {
+  -webkit-flex-shrink: 1 !important;
+      -ms-flex-negative: 1 !important;
+          flex-shrink: 1 !important;
+}
+
+.u-flexShrink2 {
+  -webkit-flex-shrink: 2 !important;
+      -ms-flex-negative: 2 !important;
+          flex-shrink: 2 !important;
+}
+
+.u-flexShrink3 {
+  -webkit-flex-shrink: 3 !important;
+      -ms-flex-negative: 3 !important;
+          flex-shrink: 3 !important;
+}
+
+.u-flexShrink4 {
+  -webkit-flex-shrink: 4 !important;
+      -ms-flex-negative: 4 !important;
+          flex-shrink: 4 !important;
+}
+
+.u-flexShrink5 {
+  -webkit-flex-shrink: 5 !important;
+      -ms-flex-negative: 5 !important;
+          flex-shrink: 5 !important;
+}
+
+/**
  * Aligning with `auto` margins
  * http://www.w3.org/TR/css-flexbox-1/#auto-margins
  */
@@ -1180,6 +1492,77 @@
 
 .u-flexExpandBottom {
   margin-bottom: auto !important;
+}
+
+/**
+ * Basis
+ */
+
+.u-flexBasisAuto {
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important;
+}
+
+.u-flexBasis0 {
+  -webkit-flex-basis: 0 !important;
+      -ms-flex-preferred-size: 0 !important;
+          flex-basis: 0 !important;
+}
+
+/*
+ * Shorthand
+ *
+ * Declares all values instead of keywords like 'initial' to work around IE10
+ * https://www.w3.org/TR/css-flexbox-1/#flex-common
+ *
+ * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+ *    This ensures it overrides flex-basis set in other utilities.
+ */
+
+/*
+ * Sizes the item based on the width/height properties
+ */
+
+.u-flexInitial {
+  -webkit-box-flex: 0 !important;
+  -webkit-flex: 0 1 auto !important;
+      -ms-flex: 0 1 auto !important;
+          flex: 0 1 auto !important;
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important; /* 1 */
+}
+
+/*
+ * Sizes the item based on the width/height properties, but makes them fully
+ * flexible, so that they absorb any free space along the main axis.
+ */
+
+.u-flexAuto {
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 1 auto !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important;
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important; /* 1 */
+}
+
+/*
+ * Sizes the item according to the width/height properties, but makes the flex
+ * item fully inflexible. Similar to initial, except that flex items are
+ * not allowed to shrink, even in overflow situations.
+ */
+
+.u-flexNone {
+  -webkit-box-flex: 0 !important;
+  -webkit-flex: 0 0 auto !important;
+      -ms-flex: 0 0 auto !important;
+          flex: 0 0 auto !important;
+  -webkit-flex-basis: auto !important;
+      -ms-flex-preferred-size: auto !important;
+          flex-basis: auto !important; /* 1 */
 }
 
 /**
@@ -1319,7 +1702,6 @@
     -webkit-box-align: start !important;
     -webkit-align-items: flex-start !important;
         -ms-flex-align: start !important;
-                -ms-grid-row-align: flex-start !important;
             align-items: flex-start !important;
   }
 
@@ -1327,7 +1709,6 @@
     -webkit-box-align: end !important;
     -webkit-align-items: flex-end !important;
         -ms-flex-align: end !important;
-                -ms-grid-row-align: flex-end !important;
             align-items: flex-end !important;
   }
 
@@ -1335,7 +1716,6 @@
     -webkit-box-align: center !important;
     -webkit-align-items: center !important;
         -ms-flex-align: center !important;
-                -ms-grid-row-align: center !important;
             align-items: center !important;
   }
 
@@ -1343,7 +1723,6 @@
     -webkit-box-align: stretch !important;
     -webkit-align-items: stretch !important;
         -ms-flex-align: stretch !important;
-                -ms-grid-row-align: stretch !important;
             align-items: stretch !important;
   }
 
@@ -1351,7 +1730,6 @@
     -webkit-box-align: baseline !important;
     -webkit-align-items: baseline !important;
         -ms-flex-align: baseline !important;
-                -ms-grid-row-align: baseline !important;
             align-items: baseline !important;
   }
 
@@ -1398,19 +1776,6 @@
             align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-sm-flex > *,
-  .u-sm-flexInline > * {
-    -webkit-flex-shrink: 1;
-        -ms-flex-negative: 1;
-            flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -1433,12 +1798,14 @@
   .u-sm-flexAlignSelfCenter {
     -webkit-align-self: center !important;
         -ms-flex-item-align: center !important;
+                -ms-grid-row-align: center !important;
             align-self: center !important;
   }
 
   .u-sm-flexAlignSelfStretch {
     -webkit-align-self: stretch !important;
         -ms-flex-item-align: stretch !important;
+                -ms-grid-row-align: stretch !important;
             align-self: stretch !important;
   }
 
@@ -1451,6 +1818,7 @@
   .u-sm-flexAlignSelfAuto {
     -webkit-align-self: auto !important;
         -ms-flex-item-align: auto !important;
+                -ms-grid-row-align: auto !important;
             align-self: auto !important;
   }
 
@@ -1528,6 +1896,47 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-sm-flexShrink0 {
+    -webkit-flex-shrink: 0 !important;
+        -ms-flex-negative: 0 !important;
+            flex-shrink: 0 !important;
+  }
+
+  .u-sm-flexShrink1 {
+    -webkit-flex-shrink: 1 !important;
+        -ms-flex-negative: 1 !important;
+            flex-shrink: 1 !important;
+  }
+
+  .u-sm-flexShrink2 {
+    -webkit-flex-shrink: 2 !important;
+        -ms-flex-negative: 2 !important;
+            flex-shrink: 2 !important;
+  }
+
+  .u-sm-flexShrink3 {
+    -webkit-flex-shrink: 3 !important;
+        -ms-flex-negative: 3 !important;
+            flex-shrink: 3 !important;
+  }
+
+  .u-sm-flexShrink4 {
+    -webkit-flex-shrink: 4 !important;
+        -ms-flex-negative: 4 !important;
+            flex-shrink: 4 !important;
+  }
+
+  .u-sm-flexShrink5 {
+    -webkit-flex-shrink: 5 !important;
+        -ms-flex-negative: 5 !important;
+            flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -1550,6 +1959,77 @@
 
   .u-sm-flexExpandBottom {
     margin-bottom: auto !important;
+  }
+
+  /**
+   * Basis
+   */
+
+  .u-sm-flexBasisAuto {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
+
+  .u-sm-flexBasis0 {
+    -webkit-flex-basis: 0 !important;
+        -ms-flex-preferred-size: 0 !important;
+            flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-sm-flexInitial {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 1 auto !important;
+        -ms-flex: 0 1 auto !important;
+            flex: 0 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-sm-flexAuto {
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-sm-flexNone {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 0 auto !important;
+        -ms-flex: 0 0 auto !important;
+            flex: 0 0 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
   }
 
 }
@@ -1691,7 +2171,6 @@
     -webkit-box-align: start !important;
     -webkit-align-items: flex-start !important;
         -ms-flex-align: start !important;
-                -ms-grid-row-align: flex-start !important;
             align-items: flex-start !important;
   }
 
@@ -1699,7 +2178,6 @@
     -webkit-box-align: end !important;
     -webkit-align-items: flex-end !important;
         -ms-flex-align: end !important;
-                -ms-grid-row-align: flex-end !important;
             align-items: flex-end !important;
   }
 
@@ -1707,7 +2185,6 @@
     -webkit-box-align: center !important;
     -webkit-align-items: center !important;
         -ms-flex-align: center !important;
-                -ms-grid-row-align: center !important;
             align-items: center !important;
   }
 
@@ -1715,7 +2192,6 @@
     -webkit-box-align: stretch !important;
     -webkit-align-items: stretch !important;
         -ms-flex-align: stretch !important;
-                -ms-grid-row-align: stretch !important;
             align-items: stretch !important;
   }
 
@@ -1723,7 +2199,6 @@
     -webkit-box-align: baseline !important;
     -webkit-align-items: baseline !important;
         -ms-flex-align: baseline !important;
-                -ms-grid-row-align: baseline !important;
             align-items: baseline !important;
   }
 
@@ -1770,19 +2245,6 @@
             align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-md-flex > *,
-  .u-md-flexInline > * {
-    -webkit-flex-shrink: 1;
-        -ms-flex-negative: 1;
-            flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -1805,12 +2267,14 @@
   .u-md-flexAlignSelfCenter {
     -webkit-align-self: center !important;
         -ms-flex-item-align: center !important;
+                -ms-grid-row-align: center !important;
             align-self: center !important;
   }
 
   .u-md-flexAlignSelfStretch {
     -webkit-align-self: stretch !important;
         -ms-flex-item-align: stretch !important;
+                -ms-grid-row-align: stretch !important;
             align-self: stretch !important;
   }
 
@@ -1823,6 +2287,7 @@
   .u-md-flexAlignSelfAuto {
     -webkit-align-self: auto !important;
         -ms-flex-item-align: auto !important;
+                -ms-grid-row-align: auto !important;
             align-self: auto !important;
   }
 
@@ -1900,6 +2365,47 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-md-flexShrink0 {
+    -webkit-flex-shrink: 0 !important;
+        -ms-flex-negative: 0 !important;
+            flex-shrink: 0 !important;
+  }
+
+  .u-md-flexShrink1 {
+    -webkit-flex-shrink: 1 !important;
+        -ms-flex-negative: 1 !important;
+            flex-shrink: 1 !important;
+  }
+
+  .u-md-flexShrink2 {
+    -webkit-flex-shrink: 2 !important;
+        -ms-flex-negative: 2 !important;
+            flex-shrink: 2 !important;
+  }
+
+  .u-md-flexShrink3 {
+    -webkit-flex-shrink: 3 !important;
+        -ms-flex-negative: 3 !important;
+            flex-shrink: 3 !important;
+  }
+
+  .u-md-flexShrink4 {
+    -webkit-flex-shrink: 4 !important;
+        -ms-flex-negative: 4 !important;
+            flex-shrink: 4 !important;
+  }
+
+  .u-md-flexShrink5 {
+    -webkit-flex-shrink: 5 !important;
+        -ms-flex-negative: 5 !important;
+            flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -1922,6 +2428,77 @@
 
   .u-md-flexExpandBottom {
     margin-bottom: auto !important;
+  }
+
+  /**
+   * Basis
+   */
+
+  .u-md-flexBasisAuto {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
+
+  .u-md-flexBasis0 {
+    -webkit-flex-basis: 0 !important;
+        -ms-flex-preferred-size: 0 !important;
+            flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-md-flexInitial {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 1 auto !important;
+        -ms-flex: 0 1 auto !important;
+            flex: 0 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-md-flexAuto {
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-md-flexNone {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 0 auto !important;
+        -ms-flex: 0 0 auto !important;
+            flex: 0 0 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
   }
 
 }
@@ -2063,7 +2640,6 @@
     -webkit-box-align: start !important;
     -webkit-align-items: flex-start !important;
         -ms-flex-align: start !important;
-                -ms-grid-row-align: flex-start !important;
             align-items: flex-start !important;
   }
 
@@ -2071,7 +2647,6 @@
     -webkit-box-align: end !important;
     -webkit-align-items: flex-end !important;
         -ms-flex-align: end !important;
-                -ms-grid-row-align: flex-end !important;
             align-items: flex-end !important;
   }
 
@@ -2079,7 +2654,6 @@
     -webkit-box-align: center !important;
     -webkit-align-items: center !important;
         -ms-flex-align: center !important;
-                -ms-grid-row-align: center !important;
             align-items: center !important;
   }
 
@@ -2087,7 +2661,6 @@
     -webkit-box-align: stretch !important;
     -webkit-align-items: stretch !important;
         -ms-flex-align: stretch !important;
-                -ms-grid-row-align: stretch !important;
             align-items: stretch !important;
   }
 
@@ -2095,7 +2668,6 @@
     -webkit-box-align: baseline !important;
     -webkit-align-items: baseline !important;
         -ms-flex-align: baseline !important;
-                -ms-grid-row-align: baseline !important;
             align-items: baseline !important;
   }
 
@@ -2142,19 +2714,6 @@
             align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-lg-flex > *,
-  .u-lg-flexInline > * {
-    -webkit-flex-shrink: 1;
-        -ms-flex-negative: 1;
-            flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -2177,12 +2736,14 @@
   .u-lg-flexAlignSelfCenter {
     -webkit-align-self: center !important;
         -ms-flex-item-align: center !important;
+                -ms-grid-row-align: center !important;
             align-self: center !important;
   }
 
   .u-lg-flexAlignSelfStretch {
     -webkit-align-self: stretch !important;
         -ms-flex-item-align: stretch !important;
+                -ms-grid-row-align: stretch !important;
             align-self: stretch !important;
   }
 
@@ -2195,6 +2756,7 @@
   .u-lg-flexAlignSelfAuto {
     -webkit-align-self: auto !important;
         -ms-flex-item-align: auto !important;
+                -ms-grid-row-align: auto !important;
             align-self: auto !important;
   }
 
@@ -2272,6 +2834,47 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-lg-flexShrink0 {
+    -webkit-flex-shrink: 0 !important;
+        -ms-flex-negative: 0 !important;
+            flex-shrink: 0 !important;
+  }
+
+  .u-lg-flexShrink1 {
+    -webkit-flex-shrink: 1 !important;
+        -ms-flex-negative: 1 !important;
+            flex-shrink: 1 !important;
+  }
+
+  .u-lg-flexShrink2 {
+    -webkit-flex-shrink: 2 !important;
+        -ms-flex-negative: 2 !important;
+            flex-shrink: 2 !important;
+  }
+
+  .u-lg-flexShrink3 {
+    -webkit-flex-shrink: 3 !important;
+        -ms-flex-negative: 3 !important;
+            flex-shrink: 3 !important;
+  }
+
+  .u-lg-flexShrink4 {
+    -webkit-flex-shrink: 4 !important;
+        -ms-flex-negative: 4 !important;
+            flex-shrink: 4 !important;
+  }
+
+  .u-lg-flexShrink5 {
+    -webkit-flex-shrink: 5 !important;
+        -ms-flex-negative: 5 !important;
+            flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -2294,6 +2897,77 @@
 
   .u-lg-flexExpandBottom {
     margin-bottom: auto !important;
+  }
+
+  /**
+   * Basis
+   */
+
+  .u-lg-flexBasisAuto {
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important;
+  }
+
+  .u-lg-flexBasis0 {
+    -webkit-flex-basis: 0 !important;
+        -ms-flex-preferred-size: 0 !important;
+            flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-lg-flexInitial {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 1 auto !important;
+        -ms-flex: 0 1 auto !important;
+            flex: 0 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-lg-flexAuto {
+    -webkit-box-flex: 1 !important;
+    -webkit-flex: 1 1 auto !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-lg-flexNone {
+    -webkit-box-flex: 0 !important;
+    -webkit-flex: 0 0 auto !important;
+        -ms-flex: 0 0 auto !important;
+            flex: 0 0 auto !important;
+    -webkit-flex-basis: auto !important;
+        -ms-flex-preferred-size: auto !important;
+            flex-basis: auto !important; /* 1 */
   }
 
 }
