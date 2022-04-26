@@ -194,10 +194,10 @@
    * Supports 1-5 proportions
    *
    * 1. Provide all values to avoid IE10 bug with shorthand flex
-   *    http://git.io/vllC7
+   *    https://github.com/philipwalton/flexbugs#6-the-default-flex-value-has-changed
    *
    *    Use `0%` to avoid bug in IE10/11 with unitless flex basis
-   *    http://git.io/vllWx
+   *    https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
    */
 
   .u-sm-flexGrow1 {
@@ -292,7 +292,8 @@
    * Declares all values instead of keywords like 'initial' to work around IE10
    * https://www.w3.org/TR/css-flexbox-1/#flex-common
    *
-   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   * 1. Fixes issue in IE 10 where flex-basis is ignored
+   *    https://github.com/philipwalton/flexbugs#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand
    *    This ensures it overrides flex-basis set in other utilities.
    */
 
